@@ -1966,6 +1966,17 @@
 </footer>
 
 <!-- ── BOOKING MODAL ── -->
+<script>
+  function openBookingModal() {
+    document.getElementById('bookingModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeBookingModal() {
+    document.getElementById('bookingModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+
 <div id="bookingModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-box">
     <div class="modal-header">
@@ -2148,15 +2159,9 @@
 
   document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-  /* ── BOOKING MODAL ── */
-  function openBookingModal() {
-    document.getElementById('bookingModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeBookingModal() {
-    document.getElementById('bookingModal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+</script>
+
+<script>
   document.getElementById('modalClose').addEventListener('click', closeBookingModal);
   document.getElementById('bookingModal').addEventListener('click', function(e) {
     if (e.target === this) closeBookingModal();
@@ -2165,7 +2170,6 @@
     if (e.key === 'Escape') closeBookingModal();
   });
 </script>
-
 <script src="https://app.keyspaceproperty.com.au/js/form_embed.js"></script>
 </body>
 </html>
