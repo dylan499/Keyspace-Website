@@ -1988,7 +1988,115 @@
       </button>
     </div>
     <div class="modal-body" style="padding:0;">
-      <iframe src="https://app.keyspaceproperty.com.au/widget/survey/LZEnBCYRcCZqHDkO7nKN" style="border:none;width:100%;min-height:520px;display:block;" scrolling="no" id="LZEnBCYRcCZqHDkO7nKN" title="survey"></iframe>
+      <!-- Keyspace Quiz Widget -->
+<div id="kp-quiz-wrap" style="max-width:480px;margin:0 auto;font-family:Arial,sans-serif;">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+    #kp-quiz-wrap *{box-sizing:border-box;margin:0;padding:0}
+    #kp-quiz-wrap .kp-card{background:#fff;border:1px solid #e0e0e0;border-radius:8px;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,.08)}
+    #kp-quiz-wrap .kp-bar{height:3px;background:#f5f5f5}
+    #kp-quiz-wrap .kp-fill{height:100%;background:#1a1a1a;transition:width .4s cubic-bezier(.16,1,.3,1)}
+    #kp-quiz-wrap .kp-step{display:none;padding:28px 24px 24px}
+    #kp-quiz-wrap .kp-step.active{display:block;animation:kpIn .35s cubic-bezier(.16,1,.3,1) both}
+    @keyframes kpIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+    #kp-quiz-wrap .kp-label{font-family:'League Spartan',Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:10px}
+    #kp-quiz-wrap .kp-q{font-family:'League Spartan',Arial,sans-serif;font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.25;margin-bottom:20px;letter-spacing:-.01em}
+    #kp-quiz-wrap .kp-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+    #kp-quiz-wrap .kp-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:1.5px solid #e0e0e0;border-radius:4px;cursor:pointer;transition:border-color .15s,background .15s;-webkit-tap-highlight-color:transparent}
+    #kp-quiz-wrap .kp-opt:active{transform:scale(.99)}
+    #kp-quiz-wrap .kp-opt.sel{border-color:#1a1a1a;background:#f8f8f8}
+    #kp-quiz-wrap .kp-dot{width:20px;height:20px;border-radius:50%;border:2px solid #e0e0e0;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .15s,background .15s}
+    #kp-quiz-wrap .kp-opt.sel .kp-dot{border-color:#1a1a1a;background:#1a1a1a}
+    #kp-quiz-wrap .kp-opt.sel .kp-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:#fff}
+    #kp-quiz-wrap .kp-opt-text{font-family:'League Spartan',Arial,sans-serif;font-size:15px;font-weight:600;color:#1a1a1a}
+    #kp-quiz-wrap .kp-fields{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+    #kp-quiz-wrap .kp-input{width:100%;border:1.5px solid #e0e0e0;border-radius:4px;padding:14px 16px;font-size:15px;color:#1a1a1a;outline:none;transition:border-color .15s,box-shadow .15s;-webkit-appearance:none;appearance:none}
+    #kp-quiz-wrap .kp-input::placeholder{color:#bbb}
+    #kp-quiz-wrap .kp-input:focus{border-color:#1a1a1a;box-shadow:0 0 0 3px rgba(26,26,26,.06)}
+    #kp-quiz-wrap .kp-btn{width:100%;background:#1a1a1a;color:#fff;font-family:'League Spartan',Arial,sans-serif;font-size:16px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;border-radius:4px;padding:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .15s,transform .15s;-webkit-tap-highlight-color:transparent;animation:kpPulse 2.5s ease 1.5s infinite}
+    @keyframes kpPulse{0%,100%{box-shadow:0 0 0 0 rgba(26,26,26,0)}50%{box-shadow:0 0 0 8px rgba(26,26,26,.1)}}
+    #kp-quiz-wrap .kp-btn:active{transform:scale(.98);opacity:.9;animation:none}
+    #kp-quiz-wrap .kp-back{background:none;border:none;font-family:'League Spartan',Arial,sans-serif;font-size:13px;font-weight:600;color:#888;cursor:pointer;width:100%;padding:12px;text-align:center;transition:color .15s}
+    #kp-quiz-wrap .kp-back:hover{color:#1a1a1a}
+    #kp-quiz-wrap .kp-note{font-size:11px;color:#888;text-align:center;margin-top:10px;line-height:1.5}
+    @keyframes kpShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  </style>
+  <div class="kp-card">
+    <div class="kp-bar"><div class="kp-fill" id="kp-fill" style="width:50%"></div></div>
+    <!-- Step 1 -->
+    <div class="kp-step active" id="kp-s1">
+      <div class="kp-label">Step 1 of 2</div>
+      <div class="kp-q">How much capital do you currently have available to invest?</div>
+      <div class="kp-opts" id="kp-opts">
+        <label class="kp-opt"><input type="radio" name="kp-cap" value="Under $100k" style="display:none"><div class="kp-dot"></div><span class="kp-opt-text">Under $100k</span></label>
+        <label class="kp-opt"><input type="radio" name="kp-cap" value="$100k – $200k" style="display:none"><div class="kp-dot"></div><span class="kp-opt-text">$100k – $200k</span></label>
+        <label class="kp-opt"><input type="radio" name="kp-cap" value="$200k – $400k" style="display:none"><div class="kp-dot"></div><span class="kp-opt-text">$200k – $400k</span></label>
+        <label class="kp-opt"><input type="radio" name="kp-cap" value="$400k+" style="display:none"><div class="kp-dot"></div><span class="kp-opt-text">$400k+</span></label>
+      </div>
+      <button class="kp-btn" id="kp-next1">NEXT <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5h9M8.5 3.5l4 4-4 4"/></svg></button>
+    </div>
+    <!-- Step 2 -->
+    <div class="kp-step" id="kp-s2">
+      <div class="kp-label">Step 2 of 2</div>
+      <div class="kp-q">Where should we send your free blueprint?</div>
+      <div class="kp-fields">
+        <input class="kp-input" id="kp-fname" type="text"  placeholder="First name"    autocomplete="given-name"  />
+        <input class="kp-input" id="kp-lname" type="text"  placeholder="Last name"     autocomplete="family-name" />
+        <input class="kp-input" id="kp-email" type="email" placeholder="Email address" autocomplete="email"       />
+        <input class="kp-input" id="kp-phone" type="tel"   placeholder="Phone number"  autocomplete="tel"         />
+      </div>
+      <button class="kp-btn" id="kp-submit">SEND MY FREE BLUEPRINT <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5h9M8.5 3.5l4 4-4 4"/></svg></button>
+      <button class="kp-back" id="kp-back">← Go back</button>
+      <p class="kp-note">🔒 Your details are 100% private. No spam, ever.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/q6eq2jrEH8uxVEdsviAV/webhook-trigger/04e3f4f0-c379-4e4e-b309-d6651f692e0e';
+  var REDIRECT    = 'https://funnel.keyspaceproperty.com.au/booking.html';
+  var fill  = document.getElementById('kp-fill');
+  var s1    = document.getElementById('kp-s1');
+  var s2    = document.getElementById('kp-s2');
+  var opts  = document.getElementById('kp-opts');
+  opts.querySelectorAll('.kp-opt').forEach(function(o){
+    o.addEventListener('click', function(){
+      opts.querySelectorAll('.kp-opt').forEach(function(x){ x.classList.remove('sel'); });
+      o.classList.add('sel');
+      o.querySelector('input').checked = true;
+    });
+  });
+  document.getElementById('kp-next1').addEventListener('click', function(){
+    if(!opts.querySelector('input:checked')){
+      var b=document.getElementById('kp-next1');
+      b.style.animation='none'; b.offsetHeight; b.style.animation='kpShake .3s ease';
+      return;
+    }
+    s1.classList.remove('active'); s2.classList.add('active');
+    fill.style.width='100%';
+  });
+  document.getElementById('kp-back').addEventListener('click', function(){
+    s2.classList.remove('active'); s1.classList.add('active');
+    fill.style.width='50%';
+  });
+  document.getElementById('kp-submit').addEventListener('click', async function(){
+    var fname=document.getElementById('kp-fname').value.trim();
+    var lname=document.getElementById('kp-lname').value.trim();
+    var email=document.getElementById('kp-email').value.trim();
+    var phone=document.getElementById('kp-phone').value.trim();
+    var capital=(opts.querySelector('input:checked')||{}).value||'';
+    if(!fname||!lname||!email||!phone){alert('Please fill in all fields.');return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email.');return;}
+    var btn=this; btn.innerHTML='Sending…'; btn.disabled=true;
+    try{
+      await fetch(GHL_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({firstName:fname,lastName:lname,email:email,phone:phone,capital:capital,source:'Keyspace Website Widget'})});
+    }catch(e){}
+    window.location.href=REDIRECT+'?name='+encodeURIComponent(fname);
+  });
+})();
+</script>
+<!-- End Keyspace Quiz Widget -->
     </div>
   </div>
 </div>
@@ -2170,6 +2278,5 @@
     if (e.key === 'Escape') closeBookingModal();
   });
 </script>
-<script src="https://app.keyspaceproperty.com.au/js/form_embed.js"></script>
 </body>
 </html>
