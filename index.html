@@ -204,8 +204,17 @@
       overflow: hidden;
       position: relative;
     }
-    /* Blobs handle ambient glow — ::before not needed */
-    .hero::before { display: none; }
+    /* Soft yellow glow — centred radial, multiply blend */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: radial-gradient(circle at center, #FFF991 0%, transparent 70%);
+      opacity: 0.6;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
     /* Top + bottom fade-out vignette */
     .hero::after { display: none; }
     .hero-canvas {
