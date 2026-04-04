@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6-Bedroom Rooming House Blueprint — Keyspace Property Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-font-smoothing: antialiased; }
+
+    body {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #555;
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { font-size: 12px; }
+      .no-print { display: none !important; }
+      .page { page-break-after: always; page-break-inside: avoid; }
+      .page:last-child { page-break-after: avoid; }
+    }
+
+    /* ── LAYOUT ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 40px;
+      padding: 0;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    }
+
+    /* ── PRINT BUTTON ── */
+    .print-bar {
+      width: 210mm;
+      margin: 32px auto 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .btn-print {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: #1a1a1a;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      cursor: pointer;
+      border-radius: 0;
+    }
+    .btn-print:hover { opacity: 0.75; }
+
+    /* ── COVER PAGE ── */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      min-height: 297mm;
+    }
+    .cover-top {
+      background: #1a1a1a;
+      padding: 40px 48px 56px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .cover-logo {
+      margin-bottom: auto;
+      padding-bottom: 48px;
+    }
+    .cover-logo img {
+      height: 28px;
+      width: auto;
+      filter: invert(1);
+    }
+    .cover-eyebrow {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 18px;
+    }
+    .cover-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .cover-title em {
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+    }
+    .cover-location {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .cover-location::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: rgba(255,255,255,0.35);
+    }
+    .cover-bottom {
+      background: #f5f5f5;
+      padding: 32px 48px;
+      display: flex;
+      gap: 0;
+    }
+    .cover-stat {
+      flex: 1;
+      padding: 0 32px 0 0;
+      border-right: 1px solid rgba(0,0,0,0.1);
+      margin-right: 32px;
+    }
+    .cover-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+    .cover-stat-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 36px;
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .cover-stat-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    /* ── INNER PAGES ── */
+    .inner-page {
+      padding: 48px 48px 40px;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      margin-bottom: 36px;
+    }
+    .page-header-logo img {
+      height: 20px;
+      width: auto;
+      opacity: 0.4;
+    }
+    .page-header-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+
+    /* Section titles */
+    .section-eyebrow {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.15;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: #999;
+      font-weight: 300;
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    /* ── COST TABLE ── */
+    .cost-table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+    .cost-table th {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #999;
+      text-align: left;
+      padding: 10px 16px;
+      background: #f5f5f5;
+      border-bottom: 1px solid #eee;
+    }
+    .cost-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 14px;
+      color: #555;
+      font-weight: 300;
+    }
+    .cost-table tr:last-child td { border-bottom: none; }
+    .cost-table .total-row td {
+      font-weight: 600;
+      color: #1a1a1a;
+      font-size: 15px;
+      background: #f5f5f5;
+      border-top: 2px solid #1a1a1a;
+    }
+    .cost-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+    /* ── HIGHLIGHT BOXES ── */
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .highlight-box {
+      background: #f5f5f5;
+      padding: 20px 22px;
+      border-radius: 0;
+    }
+    .highlight-box.dark {
+      background: #1a1a1a;
+    }
+    .highlight-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 30px;
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .highlight-box.dark .highlight-num { color: #fff; }
+    .highlight-label {
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+    }
+    .highlight-box.dark .highlight-label { color: rgba(255,255,255,0.5); }
+
+    /* ── COMPARISON ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .compare-card {
+      border: 1px solid #eee;
+      padding: 24px;
+    }
+    .compare-card.winner {
+      border-color: #1a1a1a;
+      border-width: 2px;
+    }
+    .compare-tag {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 16px;
+    }
+    .compare-card.winner .compare-tag {
+      color: #1a1a1a;
+    }
+    .compare-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .compare-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 13px;
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-row-label { color: #999; font-weight: 300; }
+    .compare-row-val { font-weight: 500; color: #1a1a1a; }
+    .compare-card.winner .compare-row-val { color: #1a1a1a; }
+
+    /* ── INCOME BREAKDOWN ── */
+    .income-visual {
+      background: #1a1a1a;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .income-visual-item { text-align: center; }
+    .income-visual-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .income-visual-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+    .income-visual-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ── SPECS GRID ── */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .spec-box {
+      border: 1px solid #eee;
+      padding: 18px;
+      text-align: center;
+    }
+    .spec-num {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .spec-label {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #bbb;
+      font-weight: 400;
+    }
+
+    /* ── FLOOR PLAN ── */
+    .floorplan-wrap {
+      flex: 1;
+      border: 1px solid #eee;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .floorplan-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      margin-top: auto;
+      padding-top: 24px;
+      border-top: 1px solid #f0f0f0;
+      font-size: 10px;
+      color: #bbb;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* ── CALLOUT STRIP ── */
+    .callout {
+      background: #f5f5f5;
+      border-left: 3px solid #1a1a1a;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: #555;
+      line-height: 1.65;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Print button -->
+<div class="print-bar no-print">
+  <button class="btn-print" onclick="window.print()">Save as PDF</button>
+</div>
+
+<!-- ══════════════════════════════ PAGE 1 — COVER ══════════════════════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-logo">
+        <img src="brand_assets/Uppercase Keyspace Property Logo, Spacious Design.png" alt="Keyspace Property Group" />
+      </div>
+      <div class="cover-eyebrow">Investment Blueprint · 6-Bed</div>
+      <div class="cover-title">6-Bedroom<br />Rooming House<br /><em>Investment Case.</em></div>
+      <div class="cover-location">Geelong, Victoria</div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat">
+        <div class="cover-stat-num">11.5%</div>
+        <div class="cover-stat-label">Gross Yield</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">$2,100</div>
+        <div class="cover-stat-label">Weekly Income</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">$950k</div>
+        <div class="cover-stat-label">Total Investment</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">6</div>
+        <div class="cover-stat-label">Private Bedrooms</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ PAGE 2 — THE NUMBERS ══════════════════════════════ -->
+<div class="page">
+  <div class="inner-page">
+    <div class="page-header">
+      <div class="page-header-logo">
+        <img src="brand_assets/Uppercase Keyspace Property Logo, Spacious Design.png" alt="Keyspace" />
+      </div>
+      <div class="page-header-label">Financial Breakdown</div>
+    </div>
+
+    <div class="section-eyebrow">Project Costs</div>
+    <div class="section-title">The Investment</div>
+    <div class="section-sub">A complete cost breakdown for a purpose-built 6-bedroom rooming house in Geelong, Victoria.</div>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Cost Item</th>
+          <th class="num">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Land Acquisition — Geelong, VIC</td>
+          <td class="num">$350,000</td>
+        </tr>
+        <tr>
+          <td>Construction &amp; Build Costs</td>
+          <td class="num">$600,000</td>
+        </tr>
+        <tr>
+          <td>Stamp Duty (estimated)</td>
+          <td class="num">~$18,500</td>
+        </tr>
+        <tr>
+          <td>Legals, Finance &amp; Holding Costs</td>
+          <td class="num">~$12,000</td>
+        </tr>
+        <tr class="total-row">
+          <td>Total Project Investment</td>
+          <td class="num">~$980,500</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-eyebrow">Income Projection</div>
+    <div class="income-visual">
+      <div class="income-visual-item">
+        <div class="income-visual-num">6</div>
+        <div class="income-visual-label">Rooms</div>
+      </div>
+      <div class="income-visual-divider"></div>
+      <div class="income-visual-item">
+        <div class="income-visual-num">$350</div>
+        <div class="income-visual-label">Per Room / Week</div>
+      </div>
+      <div class="income-visual-divider"></div>
+      <div class="income-visual-item">
+        <div class="income-visual-num">$2,100</div>
+        <div class="income-visual-label">Weekly Gross Income</div>
+      </div>
+      <div class="income-visual-divider"></div>
+      <div class="income-visual-item">
+        <div class="income-visual-num">$109,200</div>
+        <div class="income-visual-label">Annual Gross Income</div>
+      </div>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-box dark">
+        <div class="highlight-num">11.5%</div>
+        <div class="highlight-label">Gross Yield</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-num">$109,200</div>
+        <div class="highlight-label">Annual Gross Income</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-num">$2,100</div>
+        <div class="highlight-label">Weekly Gross Income</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      At 95% occupancy, annual gross income is approximately $103,740 — still delivering a gross yield above 10.5% on total project cost.
+    </div>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> All figures are indicative only and based on the assumptions provided. Stamp duty, holding costs and legals are estimates and may vary based on individual circumstances, lender requirements, and state government charges. Gross yield is calculated on total project cost before tax, management fees, insurance, rates, and maintenance. This document is for informational purposes only and does not constitute financial advice. Please seek independent financial, legal, and tax advice before making any investment decision.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ PAGE 3 — COMPARISON ══════════════════════════════ -->
+<div class="page">
+  <div class="inner-page">
+    <div class="page-header">
+      <div class="page-header-logo">
+        <img src="brand_assets/Uppercase Keyspace Property Logo, Spacious Design.png" alt="Keyspace" />
+      </div>
+      <div class="page-header-label">Why Rooming Houses</div>
+    </div>
+
+    <div class="section-eyebrow">Side by Side</div>
+    <div class="section-title">Rooming House vs.<br />Standard Investment</div>
+    <div class="section-sub">Same capital. Completely different outcome. Here's how a Keyspace rooming house compares to a standard investment property at a similar price point in the same market.</div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-tag">Standard Investment Property</div>
+        <div class="compare-title">4-Bed House<br />Geelong, VIC</div>
+        <div class="compare-row">
+          <span class="compare-row-label">Purchase Price</span>
+          <span class="compare-row-val">~$950,000</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Weekly Rent</span>
+          <span class="compare-row-val">~$650/week</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Annual Gross Income</span>
+          <span class="compare-row-val">~$33,800</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Gross Yield</span>
+          <span class="compare-row-val">~3.6%</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Tenants</span>
+          <span class="compare-row-val">1 household</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Vacancy Risk</span>
+          <span class="compare-row-val">High — 1 tenant</span>
+        </div>
+      </div>
+
+      <div class="compare-card winner">
+        <div class="compare-tag">✦ Keyspace Rooming House</div>
+        <div class="compare-title">6-Bed Rooming House<br />Geelong, VIC</div>
+        <div class="compare-row">
+          <span class="compare-row-label">Total Project Cost</span>
+          <span class="compare-row-val">~$950,000</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Weekly Income</span>
+          <span class="compare-row-val">$2,100/week</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Annual Gross Income</span>
+          <span class="compare-row-val">$109,200</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Gross Yield</span>
+          <span class="compare-row-val">11.5%</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Tenants</span>
+          <span class="compare-row-val">6 independent</span>
+        </div>
+        <div class="compare-row">
+          <span class="compare-row-label">Vacancy Risk</span>
+          <span class="compare-row-val">Low — spread across 6</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-grid">
+      <div class="highlight-box dark">
+        <div class="highlight-num">$75,400</div>
+        <div class="highlight-label">Extra Annual Income</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-num">3.2×</div>
+        <div class="highlight-label">More Yield</div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-num">6×</div>
+        <div class="highlight-label">Lower Vacancy Risk</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      Over 10 years, the additional $75,400 per year in gross income compounds to over $754,000 in extra revenue — before capital growth. The structural advantage of a rooming house is not just yield, it's resilience.
+    </div>
+
+    <div class="disclaimer">
+      Comparison figures are estimates based on publicly available rental data for Geelong, Victoria. Standard investment property figures are indicative only. Past performance is not a reliable indicator of future results. This document does not constitute financial advice.
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════ PAGE 4 — THE ASSET ══════════════════════════════ -->
+<div class="page">
+  <div class="inner-page">
+    <div class="page-header">
+      <div class="page-header-logo">
+        <img src="brand_assets/Uppercase Keyspace Property Logo, Spacious Design.png" alt="Keyspace" />
+      </div>
+      <div class="page-header-label">The Asset</div>
+    </div>
+
+    <div class="section-eyebrow">Property Specifications</div>
+    <div class="section-title">What You're Building</div>
+    <div class="section-sub">A purpose-built 6-bedroom rooming house designed for maximum yield, individual privacy, and long-term tenancy retention.</div>
+
+    <div class="specs-grid">
+      <div class="spec-box">
+        <div class="spec-num">6</div>
+        <div class="spec-label">Private Bedrooms</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-num">6</div>
+        <div class="spec-label">Ensuites</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-num">2</div>
+        <div class="spec-label">Car Spaces</div>
+      </div>
+      <div class="spec-box">
+        <div class="spec-num">1</div>
+        <div class="spec-label">Shared Kitchen &amp; Living</div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+      <div>
+        <div class="section-eyebrow" style="margin-bottom:12px;">Key Features</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Each bedroom fully self-contained with private ensuite — no shared bathrooms
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Generous shared kitchen and common living area
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Purpose-built on a standard suburban block in Geelong
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Individual leases per tenant — vacancy in one room doesn't affect others
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Built to comply with rooming house regulations in Victoria
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Managed end-to-end by Keyspace — fully hands-off for the investor
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow" style="margin-bottom:12px;">Why Geelong</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Strong rental demand driven by university students and essential workers
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Land still accessible at sub-$400k price points
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Major infrastructure investment and population growth
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Undersupply of affordable, quality rooming house accommodation
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#555;line-height:1.5;">
+            <span style="color:#1a1a1a;font-weight:600;flex-shrink:0;">→</span>
+            Victoria's rooming house regulations are mature and well-established
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="floorplan-wrap">
+      <img src="brand_assets/floorplan.png" alt="Keyspace rooming house floor plan" />
+    </div>
+
+    <div style="margin-top:12px;font-size:10px;color:#bbb;text-align:center;letter-spacing:0.08em;">
+      Floor plan is indicative. Final design subject to council approval and site conditions.
+    </div>
+
+    <div class="disclaimer" style="margin-top:20px;">
+      <strong>Next Step:</strong> Book a free strategy session with the Keyspace team to discuss your borrowing capacity, equity position, and whether this project structure suits your investment goals. — <strong>keyspaceproperty.com.au</strong>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
