@@ -857,6 +857,46 @@
       </div>
     </div>
 
+    <!-- 7 MAGPIE STREET, GOLDEN POINT -->
+    <div class="stock-card" data-status="available" data-type="9bed" onclick="openDetail('magpie')" style="cursor:pointer;">
+      <div class="stock-card-img-wrap">
+        <span class="status-badge status-available">Available</span>
+        <img src="brand_assets/B23606-ROOMING-HOUSE-RANGE-Exteriors-5-Bed-Rooming1-scaled.jpg" alt="Keyspace Rooming House" />
+      </div>
+      <div class="stock-card-body">
+        <div class="stock-card-location">7 Magpie Street · Golden Point VIC 3350</div>
+        <div class="stock-card-title">9-Bed Rooming House<br />Ballarat</div>
+        <div class="stock-card-metrics">
+          <div class="metric">
+            <div class="metric-num">12.3%</div>
+            <div class="metric-label">Gross Yield</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">$2,970</div>
+            <div class="metric-label">Weekly Income</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">$50.7k</div>
+            <div class="metric-label">Annual Cashflow</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(0,0,0,0.07);border-top:none;margin-bottom:18px;">
+          <div style="padding:10px 14px;border-right:1px solid rgba(0,0,0,0.07);">
+            <div style="font-size:11px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:2px;">Completed Value</div>
+            <div style="font-size:14px;font-weight:600;color:#1a1a1a;">$2,000,000</div>
+          </div>
+          <div style="padding:10px 14px;">
+            <div style="font-size:11px;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;color:#999;margin-bottom:2px;">Equity Created</div>
+            <div style="font-size:14px;font-weight:600;color:#1a1a1a;">~$996,000</div>
+          </div>
+        </div>
+        <div class="stock-card-footer">
+          <div class="stock-card-price">~$1.26M <span>total investment</span></div>
+          <a href="#" class="card-cta" onclick="event.stopPropagation();">View Details <span class="card-cta-arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+
     <!-- 120 SPARKS ROAD, NORLANE -->
     <div class="stock-card" data-status="under-offer" data-type="9bed" onclick="openDetail('sparks')" style="cursor:pointer;">
       <div class="stock-card-img-wrap">
@@ -913,6 +953,125 @@
 
   </div>
 </main>
+
+<!-- ── DETAIL MODAL: 7 MAGPIE ST ── -->
+<div class="detail-overlay" id="detail-magpie">
+  <div class="detail-backdrop" onclick="closeDetail()"></div>
+  <div class="detail-panel">
+    <button class="detail-close" onclick="closeDetail()">×</button>
+    <div class="detail-panel-hero">
+      <div class="detail-eyebrow">Available · 9-Bedroom Rooming House · Ballarat, VIC</div>
+      <div class="detail-title">7 Magpie Street<br />Golden Point VIC 3350</div>
+      <div class="detail-hero-stats">
+        <div class="detail-hero-stat">
+          <div class="detail-hero-stat-num">12.3%</div>
+          <div class="detail-hero-stat-label">Gross Yield</div>
+        </div>
+        <div class="detail-hero-stat">
+          <div class="detail-hero-stat-num">$2,970</div>
+          <div class="detail-hero-stat-label">Weekly Income</div>
+        </div>
+        <div class="detail-hero-stat">
+          <div class="detail-hero-stat-num">$50,713</div>
+          <div class="detail-hero-stat-label">Annual Cashflow</div>
+        </div>
+        <div class="detail-hero-stat">
+          <div class="detail-hero-stat-num">~$996k</div>
+          <div class="detail-hero-stat-label">Equity Created</div>
+        </div>
+      </div>
+    </div>
+    <img class="detail-img" src="brand_assets/B23606-ROOMING-HOUSE-RANGE-Exteriors-5-Bed-Rooming1-scaled.jpg" alt="7 Magpie Street Golden Point" />
+    <div class="detail-body">
+      <div class="detail-section">
+        <div class="detail-section-title">Section 1 — Project Details</div>
+        <table class="detail-table">
+          <tr><td>Property Address</td><td>7 Magpie Street, Golden Point VIC 3350</td></tr>
+          <tr><td>Property Type</td><td>9-Bedroom Rooming House</td></tr>
+          <tr><td>Weekly Rent Per Room</td><td>$330</td></tr>
+          <tr><td>Number of Rooms</td><td>9</td></tr>
+          <tr><td>Weekly Gross Income</td><td>$2,970</td></tr>
+        </table>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title">Section 2 — Project Costs</div>
+        <table class="detail-table">
+          <tr><td colspan="2" style="padding-top:14px;padding-bottom:6px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#bbb;">A. Land Costs</td></tr>
+          <tr><td>Land Purchase Price</td><td>$400,000</td></tr>
+          <tr><td>Stamp Duty</td><td>$19,070</td></tr>
+          <tr><td>Valuation Fees</td><td>$5,000</td></tr>
+          <tr><td>Conveyancing Fees</td><td>$3,000</td></tr>
+          <tr class="total-row"><td>Total Acquisition Costs</td><td>$427,070</td></tr>
+          <tr><td colspan="2" style="padding-top:14px;padding-bottom:6px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#bbb;">B. Construction Costs</td></tr>
+          <tr><td>Base Build Contract (Regional)</td><td>$800,000</td></tr>
+          <tr><td>Furniture Package</td><td>$30,000</td></tr>
+          <tr><td>Landscaping</td><td>Included</td></tr>
+          <tr><td>Utility Connections</td><td>Included</td></tr>
+          <tr class="total-row"><td>Total Construction Costs</td><td>$830,000</td></tr>
+          <tr><td colspan="2" style="padding-top:14px;padding-bottom:6px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#bbb;">C. Total Project</td></tr>
+          <tr class="total-row"><td>Total Project Investment</td><td>~$1,257,070</td></tr>
+          <tr class="total-row"><td>Total Deposit Required</td><td>$277,390</td></tr>
+        </table>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title">Section 3 & 4 — Income & Expenses</div>
+        <table class="detail-table">
+          <tr><td colspan="2" style="padding-top:14px;padding-bottom:6px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#bbb;">Income</td></tr>
+          <tr><td>Annual Gross Rent</td><td>$154,440</td></tr>
+          <tr><td colspan="2" style="padding-top:14px;padding-bottom:6px;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#bbb;">Operating Expenses</td></tr>
+          <tr><td>Property Management (7%)</td><td>$10,811</td></tr>
+          <tr><td>Council Rates</td><td>$2,500</td></tr>
+          <tr><td>Power</td><td>$4,000</td></tr>
+          <tr><td>Water Rates</td><td>$1,000</td></tr>
+          <tr><td>Internet</td><td>$1,440</td></tr>
+          <tr><td>Insurance</td><td>$5,000</td></tr>
+          <tr><td>Waste Management</td><td>$1,700</td></tr>
+          <tr><td>Maintenance Allowance</td><td>$2,000</td></tr>
+          <tr class="total-row"><td>Total Operating Expenses</td><td>$28,451</td></tr>
+        </table>
+      </div>
+      <div class="detail-highlight-strip">
+        <div class="detail-highlight-strip-item">
+          <div class="detail-highlight-strip-num">$154,440</div>
+          <div class="detail-highlight-strip-label">Annual Gross Rent</div>
+        </div>
+        <div class="detail-highlight-strip-item">
+          <div class="detail-highlight-strip-num">$125,989</div>
+          <div class="detail-highlight-strip-label">Net Operating Income</div>
+        </div>
+        <div class="detail-highlight-strip-item">
+          <div class="detail-highlight-strip-num">$50,713</div>
+          <div class="detail-highlight-strip-label">Cashflow After Mortgage</div>
+        </div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title">Section 6 — Loan Assessment</div>
+        <table class="detail-table">
+          <tr><td>Total Loan Amount</td><td>$1,003,680</td></tr>
+          <tr><td>Interest Rate</td><td>7.5% p.a.</td></tr>
+          <tr><td>Monthly Repayment</td><td>$6,273</td></tr>
+          <tr><td>Annual Repayments</td><td>$75,276</td></tr>
+          <tr class="total-row"><td>Annual Cashflow (After Mortgage)</td><td>$50,713</td></tr>
+        </table>
+      </div>
+      <div class="detail-section">
+        <div class="detail-section-title">Section 7 — Equity Position</div>
+        <table class="detail-table">
+          <tr><td>Valuation on Completion</td><td>$2,000,000</td></tr>
+          <tr><td>Total Loan Amount</td><td>$1,003,680</td></tr>
+          <tr class="total-row"><td>Property Equity on Completion</td><td>$996,320</td></tr>
+        </table>
+      </div>
+      <div class="detail-note">
+        All figures are indicative only and based on the assumptions provided. This document is for informational purposes only and does not constitute financial advice. Please seek independent financial, legal, and tax advice before making any investment decision.
+      </div>
+    </div>
+    <div class="detail-sticky-footer">
+      <span class="detail-sticky-footer-label">7 Magpie Street, Golden Point VIC 3350</span>
+      <button class="detail-download-btn" onclick="printFeasibility('magpie')">↓ Download PDF</button>
+    </div>
+  </div>
+</div>
 
 <!-- ── DETAIL MODAL: 61 BELLBIRD AVE ── -->
 <div class="detail-overlay" id="detail-bellbird">
@@ -1266,6 +1425,16 @@
         { num: '$58,788', label: 'Annual Cashflow' },
         { num: '~$953k', label: 'Equity Created' },
       ]
+    },
+    magpie: {
+      eyebrow: 'Available · 9-Bedroom Rooming House · Ballarat, VIC',
+      title: '7 Magpie Street\nGolden Point VIC 3350',
+      stats: [
+        { num: '12.3%', label: 'Gross Yield' },
+        { num: '$2,970', label: 'Weekly Income' },
+        { num: '$50,713', label: 'Annual Cashflow' },
+        { num: '~$996k', label: 'Equity Created' },
+      ]
     }
   };
 
@@ -1274,6 +1443,82 @@
     if (!d) return;
 
     const printWin = window.open('', '_blank');
+    const magpieHTML = `
+    <div class="section">
+      <div class="section-title">Section 1 — Project Details</div>
+      <table>
+        <tr><td>Property Address</td><td>7 Magpie Street, Golden Point VIC 3350</td></tr>
+        <tr><td>Property Type</td><td>9-Bedroom Rooming House</td></tr>
+        <tr><td>Weekly Rent Per Room</td><td>$330</td></tr>
+        <tr><td>Number of Rooms</td><td>9</td></tr>
+        <tr><td>Weekly Gross Income</td><td>$2,970</td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <div class="section-title">Section 2 — Project Costs</div>
+      <div class="sub-title">A. Land Costs</div>
+      <table>
+        <tr><td>Land Purchase Price</td><td>$400,000</td></tr>
+        <tr><td>Stamp Duty</td><td>$19,070</td></tr>
+        <tr><td>Valuation Fees</td><td>$5,000</td></tr>
+        <tr><td>Conveyancing Fees</td><td>$3,000</td></tr>
+        <tr class="total"><td>Total Acquisition Costs</td><td>$427,070</td></tr>
+      </table>
+      <div class="sub-title">B. Construction Costs</div>
+      <table>
+        <tr><td>Base Build Contract (Regional)</td><td>$800,000</td></tr>
+        <tr><td>Furniture Package</td><td>$30,000</td></tr>
+        <tr><td>Landscaping</td><td>Included</td></tr>
+        <tr><td>Utility Connections</td><td>Included</td></tr>
+        <tr class="total"><td>Total Construction Costs</td><td>$830,000</td></tr>
+      </table>
+      <div class="sub-title">C. Total Project</div>
+      <table>
+        <tr class="total"><td>Total Project Investment</td><td>~$1,257,070</td></tr>
+        <tr class="total"><td>Total Deposit Required</td><td>$277,390</td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <div class="section-title">Section 3 & 4 — Income & Expenses</div>
+      <div class="sub-title">Income</div>
+      <table><tr><td>Annual Gross Rent</td><td>$154,440</td></tr></table>
+      <div class="sub-title">Operating Expenses</div>
+      <table>
+        <tr><td>Property Management (7%)</td><td>$10,811</td></tr>
+        <tr><td>Council Rates</td><td>$2,500</td></tr>
+        <tr><td>Power</td><td>$4,000</td></tr>
+        <tr><td>Water Rates</td><td>$1,000</td></tr>
+        <tr><td>Internet</td><td>$1,440</td></tr>
+        <tr><td>Insurance</td><td>$5,000</td></tr>
+        <tr><td>Waste Management</td><td>$1,700</td></tr>
+        <tr><td>Maintenance Allowance</td><td>$2,000</td></tr>
+        <tr class="total"><td>Total Operating Expenses</td><td>$28,451</td></tr>
+      </table>
+    </div>
+    <div class="strip">
+      <div class="strip-item"><div class="strip-num">$154,440</div><div class="strip-label">Annual Gross Rent</div></div>
+      <div class="strip-item"><div class="strip-num">$125,989</div><div class="strip-label">Net Operating Income</div></div>
+      <div class="strip-item"><div class="strip-num">$50,713</div><div class="strip-label">Cashflow After Mortgage</div></div>
+    </div>
+    <div class="section">
+      <div class="section-title">Section 6 — Loan Assessment</div>
+      <table>
+        <tr><td>Total Loan Amount</td><td>$1,003,680</td></tr>
+        <tr><td>Interest Rate</td><td>7.5% p.a.</td></tr>
+        <tr><td>Monthly Repayment</td><td>$6,273</td></tr>
+        <tr><td>Annual Repayments</td><td>$75,276</td></tr>
+        <tr class="total"><td>Annual Cashflow (After Mortgage)</td><td>$50,713</td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <div class="section-title">Section 7 — Equity Position</div>
+      <table>
+        <tr><td>Valuation on Completion</td><td>$2,000,000</td></tr>
+        <tr><td>Total Loan Amount</td><td>$1,003,680</td></tr>
+        <tr class="total"><td>Property Equity on Completion</td><td>$996,320</td></tr>
+      </table>
+    </div>`;
+
     const bellbirdHTML = `
     <div class="section">
       <div class="section-title">Section 1 — Project Details</div>
@@ -1426,7 +1671,7 @@
       </table>
     </div>`;
 
-    const bodyContent = id === 'bellbird' ? bellbirdHTML : sparksHTML;
+    const bodyContent = id === 'bellbird' ? bellbirdHTML : id === 'magpie' ? magpieHTML : sparksHTML;
 
     printWin.document.write(`<!DOCTYPE html>
 <html>
